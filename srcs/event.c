@@ -68,7 +68,8 @@ void	ft_putpixel_in_img(int x, int y, t_gen *g, int color)
 {
 	if ((unsigned long long int)((x * 4) + (y * 2560 * 4)) >
 			(unsigned long long int)(2560 * 1440 * 4) ||
-			(unsigned long long int)((x * 4) + (y * 2560 * 4)) <= 0)
+			(unsigned long long int)((x * 4) + (y * 2560 * 4))
+			<= 0 || x > 2560 || x < 0 || y < 0 || y > 1440)
 		return ;
 	if (color != 0)
 	{
