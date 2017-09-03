@@ -27,6 +27,11 @@ typedef	struct		s_gen
 	int				larg_y;
 	void			*win;
 	void			*mlx;
+	void			*img;
+	char			*img_ptr;
+	int				bpp;
+	int				s_l;
+	int				endian;
 	int				x0;
 	int				y0;
 	int				x1;
@@ -34,6 +39,7 @@ typedef	struct		s_gen
 	float			zoom;
 	int				x;
 	int				y;
+	int				color;
 	float			xrot;
 	float			yrot;
 	int				test;
@@ -61,5 +67,7 @@ void				ft_test(t_gen *g);
 void				bresenham_2(t_gen *g);
 void				ft_free_tab(char **tab);
 long				ft_atol(const char *str);
+void				ft_putpixel_in_img(int x, int y, t_gen *g, int color);
+int					init(t_gen *g);
 
 #endif

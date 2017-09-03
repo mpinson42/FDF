@@ -48,6 +48,7 @@ int	go_malloc1(char **tab, int y, t_gen *g)
 	int i;
 
 	i = 0;
+	g->color = 42;
 	if (!(g->ad_x[y] = malloc(sizeof(int) * ft_strlen_tab(tab))))
 		return (-1);
 	if (!(g->ad_y[y] = malloc(sizeof(int) * ft_strlen_tab(tab))))

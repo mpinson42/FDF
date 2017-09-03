@@ -18,13 +18,6 @@ void	ft_clear_calcu(t_gen *g)
 	int y;
 
 	i = -1;
-	while (++i < 80)
-	{
-		y = -1;
-		while (++y < 200)
-			mlx_pixel_put(g->mlx, g->win, y, i, 0);
-	}
-	i = -1;
 	while (++i < g->larg_x)
 	{
 		y = -1;

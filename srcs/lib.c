@@ -6,11 +6,13 @@
 /*   By: mpinson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 18:07:57 by mpinson           #+#    #+#             */
-/*   Updated: 2017/09/02 18:18:31 by mpinson          ###   ########.fr       */
+/*   Updated: 2017/09/03 15:29:16 by mpinson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+#include <stdio.h>
 
 void	ft_free_tab(char **tab)
 {
@@ -57,8 +59,8 @@ void	bresenham(t_gen *g, int color)
 	b.err = (b.dx > b.dy ? b.dx : -b.dy) / 2;
 	while (42)
 	{
-		mlx_pixel_put(g->mlx, g->win, g->x0
-			+ 2560 / 4 + g->x, g->y0 + 1440 / 4 + g->y, color);
+		ft_putpixel_in_img(g->x0 + 2560 / 4 +
+			g->x, g->y0 + 1440 / 4 + g->y, g, color * 50000);
 		if ((g->x0 == g->x1 && g->y0 == g->y1))
 			break ;
 		b.e2 = b.err;
@@ -86,8 +88,8 @@ void	bresenham_2(t_gen *g)
 	b.err = (b.dx > b.dy ? b.dx : -b.dy) / 2;
 	while (42)
 	{
-		mlx_pixel_put(g->mlx, g->win, g->x0
-			+ 2560 / 4 + g->x, g->y0 + 1440 / 4 + g->y, 0);
+		ft_putpixel_in_img(g->x0 + 2560 / 4 + g->x,
+			g->y0 + 1440 / 4 + g->y, g, 0);
 		if (g->x0 == g->x1 && g->y0 == g->y1)
 			break ;
 		b.e2 = b.err;
