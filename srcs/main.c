@@ -12,8 +12,6 @@
 
 #include "fdf.h"
 
-#include <stdio.h>
-
 void	ft_menu(t_gen *g)
 {
 	mlx_string_put(g->mlx, g->win, 0, 0, 0x00FFFFFF, "+/- zoom");

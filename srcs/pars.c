@@ -12,8 +12,6 @@
 
 #include "fdf.h"
 
-#include <stdio.h>
-
 int	ft_check(char *str)
 {
 	char	**tab;
@@ -32,7 +30,6 @@ int	ft_check(char *str)
 				(ft_atol(tab[i]) > 2147483647 ||
 					ft_atol(tab[i]) < -2147483648))
 			{
-				printf("%s", str);
 				return (-1);
 			}
 			y++;

@@ -12,8 +12,6 @@
 
 #include "fdf.h"
 
-#include <stdio.h>
-
 void	ft_free_tab(char **tab)
 {
 	int i;

@@ -12,8 +12,6 @@
 
 #include "fdf.h"
 
-#include <stdio.h>
-
 void	ft_key(int kc, t_gen *g)
 {
 	if (kc == 78)
