@@ -60,5 +60,6 @@ int					red_cross(t_gen *g);
 void				ft_test(t_gen *g);
 void				bresenham_2(t_gen *g);
 void				ft_free_tab(char **tab);
+long				ft_atol(const char *str);
 
 #endif

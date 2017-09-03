@@ -86,3 +86,28 @@ void	ft_clear(t_gen *g)
 	}
 	ft_clear_algo(g, 0, i, y);
 }
+
+long	ft_atol(const char *str)
+{
+	long i;
+	long res;
+	long neg;
+
+	neg = 1;
+	res = 0;
+	i = 0;
+	while ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\f'
+				|| str[i] == '\r' || str[i] == '\v') && str[i])
+		i++;
+	if (str[i] == '-')
+		neg = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while ((str[i] <= '9' && str[i] >= '0') && str[i])
+	{
+		res *= 10;
+		res += str[i] - 48;
+		i++;
+	}
+	return (res * neg);
+}

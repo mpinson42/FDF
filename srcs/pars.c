@@ -12,6 +12,8 @@
 
 #include "fdf.h"
 
+#include <stdio.h>
+
 int	ft_check(char *str)
 {
 	char	**tab;
@@ -25,8 +27,14 @@ int	ft_check(char *str)
 		y = 0;
 		while (str[y] && str[y] != ',')
 		{
-			if (str[y] != '-' && str[y] != 32 && 1 != ft_isdigit(str[y]))
+			if ((str[y] != '-' && str[y] != 32 && 1 != ft_isdigit(str[y]))
+				|| ft_strlen(tab[i]) > 11 ||
+				(ft_atol(tab[i]) > 2147483647 ||
+					ft_atol(tab[i]) < -2147483648))
+			{
+				printf("%s", str);
 				return (-1);
+			}
 			y++;
 		}
 		i++;
@@ -123,7 +131,7 @@ int	ft_pars(t_gen *g, char *pass)
 		lang = ft_strlen_s(test);
 		free(test);
 	}
-	if(g->larg_x <= 1 || go_malloc2(g, lang) == -1)
+	if (g->larg_x <= 1 || go_malloc2(g, lang) == -1)
 		return (-1);
 	close(fd);
 	ft_init(g, pass);
