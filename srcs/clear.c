@@ -104,3 +104,17 @@ long	ft_atol(const char *str)
 	}
 	return (res * neg);
 }
+
+int		init(t_gen *g)
+{
+	if (!(g->mlx = mlx_init()))
+		return (-1);
+	if (!(g->img = mlx_new_image(g->mlx, 2560, 1440)))
+		return (-1);
+	if (!(g->img_ptr = mlx_get_data_addr(g->img, &(g->bpp),
+		&(g->s_l), &(g->endian))))
+		return (-1);
+	if (!(g->win = mlx_new_window(g->mlx, 2560, 1440, "fdf")))
+		return (-1);
+	return (0);
+}

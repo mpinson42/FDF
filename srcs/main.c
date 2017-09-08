@@ -110,6 +110,9 @@ int		main(int argc, char **argv)
 	t_gen g;
 
 	ft_bzero(&g, sizeof(g));
+	g.red = 48;
+	g.green = 113;
+	g.blue = 51;
 	if (argc != 2 || argv[1][ft_strlen(argv[1]) - 1] != 'f'
 			|| argv[1][ft_strlen(argv[1]) - 2] != 'd'
 			|| argv[1][ft_strlen(argv[1]) - 3] != 'f'

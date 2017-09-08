@@ -28,6 +28,34 @@ void	ft_key(int kc, t_gen *g)
 		g->color += 1;
 }
 
+void	key_color(int kc, t_gen *g)
+{
+	if (kc == 89)
+		g->red += 10;
+	if (kc == 86)
+		g->red -= 10;
+	if (kc == 91)
+		g->green += 10;
+	if (kc == 87)
+		g->green -= 10;
+	if (kc == 92)
+		g->blue += 10;
+	if (kc == 88)
+		g->blue -= 10;
+	if (kc == 117)
+	{
+		g->zoom = 2;
+		g->x = 0;
+		g->y = 0;
+		g->yrot = -1;
+		g->xrot = 0;
+		g->color = 42;
+		g->red = 48;
+		g->green = 113;
+		g->blue = 51;
+	}
+}
+
 int		key_pressed(int kc, t_gen *g)
 {
 	ft_clear(g);
@@ -44,15 +72,7 @@ int		key_pressed(int kc, t_gen *g)
 		g->xrot -= 1;
 	if (kc == 2)
 		g->xrot += 1;
-	if (kc == 117)
-	{
-		g->zoom = 2;
-		g->x = 0;
-		g->y = 0;
-		g->yrot = -1;
-		g->xrot = 0;
-		g->color = 42;
-	}
+	key_color(kc, g);
 	ft_test(g);
 	return (0);
 }
@@ -76,9 +96,9 @@ void	ft_putpixel_in_img(int x, int y, t_gen *g, int color)
 		if (color == 1 || color == 2)
 			color = 0x00FFFFFF;
 		color = ft_absolut(color);
-		g->img_ptr[(x * 4) + (y * 2560 * 4)] = color % 256;
-		g->img_ptr[(x * 4) + (y * 2560 * 4) + 1] = color % 256;
-		g->img_ptr[(x * 4) + (y * 2560 * 4) + 2] = color % 256;
+		g->img_ptr[(x * 4) + (y * 2560 * 4)] = color % 256 + g->red;
+		g->img_ptr[(x * 4) + (y * 2560 * 4) + 1] = color % 256 + g->green;
+		g->img_ptr[(x * 4) + (y * 2560 * 4) + 2] = color % 256 + g->blue;
 		g->img_ptr[(x * 4) + (y * 2560 * 4) + 3] = 0;
 	}
 	else
@@ -88,18 +108,4 @@ void	ft_putpixel_in_img(int x, int y, t_gen *g, int color)
 		g->img_ptr[(x * 4) + (y * 2560 * 4) + 2] = 0;
 		g->img_ptr[(x * 4) + (y * 2560 * 4) + 3] = 0;
 	}
-}
-
-int		init(t_gen *g)
-{
-	if (!(g->mlx = mlx_init()))
-		return (-1);
-	if (!(g->img = mlx_new_image(g->mlx, 2560, 1440)))
-		return (-1);
-	if (!(g->img_ptr = mlx_get_data_addr(g->img, &(g->bpp),
-		&(g->s_l), &(g->endian))))
-		return (-1);
-	if (!(g->win = mlx_new_window(g->mlx, 2560, 1440, "fdf")))
-		return (-1);
-	return (0);
 }

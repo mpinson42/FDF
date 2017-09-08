@@ -43,6 +43,9 @@ typedef	struct		s_gen
 	float			xrot;
 	float			yrot;
 	int				test;
+	int				red;
+	int				green;
+	int				blue;
 }					t_gen;
 
 typedef	struct		s_bresenham
