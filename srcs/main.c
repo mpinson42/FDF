@@ -18,7 +18,8 @@ void	ft_menu(t_gen *g)
 	mlx_string_put(g->mlx, g->win, 0, 15, 0x00FFFFFF, "fleche depalcement");
 	mlx_string_put(g->mlx, g->win, 0, 30, 0x00FFFFFF, "w/a/s/d depalcer z");
 	mlx_string_put(g->mlx, g->win, 0, 45, 0x00FFFFFF, "delete reset");
-	mlx_string_put(g->mlx, g->win, 0, 60, 0x00FFFFFF, "page up change color");
+	mlx_string_put(g->mlx, g->win, 0, 60, 0x00FFFFFF, "page up contrast");
+	mlx_string_put(g->mlx, g->win, 0, 0, 0x00FFFFFF, "7,4,8,5,9,6 couleur");
 	mlx_string_put(g->mlx, g->win, 0, 75, 0x00FFFFFF, "echap quitte");
 }
 
