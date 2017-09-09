@@ -6,7 +6,7 @@
 /*   By: mpinson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 18:08:04 by mpinson           #+#    #+#             */
-/*   Updated: 2017/09/03 15:29:26 by mpinson          ###   ########.fr       */
+/*   Updated: 2017/09/09 18:21:47 by mpinson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ft_menu(t_gen *g)
 	mlx_string_put(g->mlx, g->win, 0, 30, 0x00FFFFFF, "w/a/s/d depalcer z");
 	mlx_string_put(g->mlx, g->win, 0, 45, 0x00FFFFFF, "delete reset");
 	mlx_string_put(g->mlx, g->win, 0, 60, 0x00FFFFFF, "page up contrast");
-	mlx_string_put(g->mlx, g->win, 0, 0, 0x00FFFFFF, "7,4,8,5,9,6 couleur");
-	mlx_string_put(g->mlx, g->win, 0, 75, 0x00FFFFFF, "echap quitte");
+	mlx_string_put(g->mlx, g->win, 0, 75, 0x00FFFFFF, "7,4,8,5,9,6 couleur");
+	mlx_string_put(g->mlx, g->win, 0, 90, 0x00FFFFFF, "echap quitte");
 }
 
 void	ft_start_algo(t_gen *g, int *i, int *y, int color)
