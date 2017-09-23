@@ -129,6 +129,7 @@ int		main(int argc, char **argv)
 	}
 	if (init(&g) == -1)
 		return (0);
+	system("afplay musique/tron.mp3 &");
 	ft_test(&g);
 	mlx_hook(g.win, 2, 1L << 0, &key_pressed, &g);
 	mlx_hook(g.win, 17, (1L << 17), &red_cross, &g);

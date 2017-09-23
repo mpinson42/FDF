@@ -60,7 +60,10 @@ int		key_pressed(int kc, t_gen *g)
 {
 	ft_clear(g);
 	if (kc == 53)
+	{
+		system("killall afplay");
 		exit(0);
+	}
 	ft_key(kc, g);
 	if (kc == 69)
 		g->zoom += 0.1;
@@ -80,6 +83,7 @@ int		key_pressed(int kc, t_gen *g)
 int		red_cross(t_gen *g)
 {
 	(void)g;
+	system("killall afplay");
 	exit(0);
 	return (0);
 }
