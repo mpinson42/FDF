@@ -119,6 +119,9 @@ int	ft_pars(t_gen *g, char *pass)
 	int		lang;
 
 	lang = -1;
+	g->red = 48;
+	g->green = 113;
+	g->blue = 51;
 	if ((fd = open(pass, O_RDONLY)) == -1)
 		return (-1);
 	while (get_next_line(fd, &test) > 0)
