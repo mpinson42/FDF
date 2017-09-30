@@ -84,12 +84,13 @@ int	ft_init(t_gen *g, char *pass)
 	while (get_next_line(fd, &test) > 0)
 	{
 		tab = ft_strsplit(test, ' ');
+		g->larg_y = ft_strlen_tab(tab);
 		if (-1 == (go_malloc1(tab, y, g)))
 			return (-1);
 		free(test);
+		free(tab);
 		y++;
 	}
-	g->larg_y = ft_strlen_tab(tab);
 	close(fd);
 	free(test);
 	return (0);

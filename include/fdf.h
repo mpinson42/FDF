@@ -72,5 +72,6 @@ void				ft_free_tab(char **tab);
 long				ft_atol(const char *str);
 void				ft_putpixel_in_img(int x, int y, t_gen *g, int color);
 int					init(t_gen *g);
+void				ft_free_tab2(char **tab, t_gen *g);
 
 #endif

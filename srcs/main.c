@@ -93,9 +93,9 @@ void	ft_test(t_gen *g)
 		while (++y < g->larg_y)
 		{
 			g->bd_x[i][y] = (g->ad_x[i][y] +
-					(g->ad_z[i][y] * g->xrot) - g->ad_y[i][y]) * g->zoom;
+				(g->ad_z[i][y] * g->xrot) - g->ad_y[i][y]) * g->zoom;
 			g->bd_y[i][y] = (g->ad_x[i][y] +
-					(g->ad_z[i][y] * g->yrot) + g->ad_y[i][y]) * g->zoom;
+				(g->ad_z[i][y] * g->yrot) + g->ad_y[i][y]) * g->zoom;
 		}
 	}
 	i = -1;
