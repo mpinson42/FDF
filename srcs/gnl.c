@@ -38,7 +38,7 @@ static int		ft_check_static(t_env *e, char **line)
 	return (0);
 }
 
-static void		ft_suit2(t_env *e, char **line, char str[129])
+static void		ft_suit2(t_env *e, char **line, char str[BUFF_SIZE + 1])
 {
 	int		i;
 	char	*non;
