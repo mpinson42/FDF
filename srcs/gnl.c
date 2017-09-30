@@ -89,7 +89,7 @@ static int		ft_fin(t_env *e, char **line)
 	return (0);
 }
 
-int				get_next_line(const int fd, char **line)
+int				get_next_line2(const int fd, char **line)
 {
 	static t_env	*e = NULL;
 	int				i;

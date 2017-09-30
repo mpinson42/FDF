@@ -79,9 +79,10 @@ int	ft_init(t_gen *g, char *pass)
 	g->zoom = 2;
 	g->yrot = -1;
 	g->xrot = 0;
+	test = NULL;
 	if ((fd = open(pass, O_RDONLY)) == -1)
 		return (-1);
-	while (get_next_line(fd, &test) > 0)
+	while (get_next_line2(fd, &test) > 0)
 	{
 		tab = ft_strsplit(test, ' ');
 		g->larg_y = ft_strlen_tab(tab);
@@ -123,6 +124,7 @@ int	ft_pars(t_gen *g, char *pass)
 	g->red = 48;
 	g->green = 113;
 	g->blue = 51;
+	test = NULL;
 	if ((fd = open(pass, O_RDONLY)) == -1)
 		return (-1);
 	while (get_next_line(fd, &test) > 0)

@@ -28,15 +28,18 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef	struct		s_fd
+typedef struct		s_env
 {
 	int				fd;
-	char			*lne;
-	struct s_fd		*next;
-	struct s_fd		*srt;
-}					t_fd;
+	char			*str;
+	int				bol;
+	int				bol2;
+	struct s_env	*next;
+	struct s_env	*presed;
+}					t_env;
 
-int				get_next_line(int const fd, char **line);
+int					get_next_line(int const fd, char **line);
+int					get_next_line2(int const fd, char **line);
 char				*ft_ftoa(float chiffre, int decimal);
 wchar_t				*ft_uni_strsub(wchar_t *s, unsigned int start, size_t len);
 wchar_t				ft_uni_strcmp(wchar_t *s1, wchar_t *s2);

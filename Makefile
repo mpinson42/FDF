@@ -1,10 +1,10 @@
 NAME = fdf
 
-SRC = srcs/main.c srcs/lib.c srcs/pars.c srcs/event.c srcs/clear.c
+SRC = srcs/main.c srcs/lib.c srcs/pars.c srcs/event.c srcs/clear.c srcs/gnl.c
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC2 = main.o lib.o pars.o event.o clear.o
+SRC2 = main.o lib.o pars.o event.o clear.o gnl.o
 
 all: $(NAME)
 
