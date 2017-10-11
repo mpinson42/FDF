@@ -58,6 +58,8 @@ void	key_color(int kc, t_gen *g)
 
 int		key_pressed(int kc, t_gen *g)
 {
+	if (kc == 19)
+		bmp_write(g);
 	ft_clear(g);
 	if (kc == 53)
 	{

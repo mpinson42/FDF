@@ -15,6 +15,8 @@
 
 # include "libft.h"
 # include "mlx.h"
+# define IMG_WIDTH (2560)
+# define IMG_HEIGHT (1440)
 
 typedef	struct		s_gen
 {
@@ -73,5 +75,6 @@ long				ft_atol(const char *str);
 void				ft_putpixel_in_img(int x, int y, t_gen *g, int color);
 int					init(t_gen *g);
 void				ft_free_tab2(char **tab, t_gen *g);
+void				bmp_write(t_gen *g);
 
 #endif
