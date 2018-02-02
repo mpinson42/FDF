@@ -16,13 +16,15 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
 	char			*str;
+	unsigned int	save;
 
+	save = ft_strlen(s);
 	if (!s)
 		return (NULL);
 	i = 0;
 	if (!(str = (char *)malloc(sizeof(const char) * len + 1)))
 		return (NULL);
-	while (start < len)
+	while (i < len && start < save)
 	{
 		str[i] = s[start];
 		start++;
